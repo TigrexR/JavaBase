@@ -53,6 +53,7 @@ public class CollectionTest {
         while (iteratorLast.hasNext()){
             System.out.println(iteratorLast.next());
         }
+
     }
 
     @Test
@@ -67,7 +68,28 @@ public class CollectionTest {
 
         Map hashMap = new HashMap<String, String>();
 
+        HashSet<User> hashSet = new HashSet<User>();
+
 
     }
+
+    @Test
+    public void setTest(){
+
+        Set hashSet = new HashSet();
+        hashSet.add(123);
+        hashSet.add(345);
+        hashSet.add(new String("abd"));
+        hashSet.add(new String("abc"));
+        User user1 = new User(1, "123", 1);
+        User user2 = new User(1, "123", 1);
+        hashSet.add(user1);
+        hashSet.add(user2);
+        System.out.println(hashSet.size());
+        System.out.println(hashSet);
+
+
+    }
+
 
 }
