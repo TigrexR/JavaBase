@@ -31,13 +31,23 @@ public class ThreadTest {
         private void doSomething(String message) {
             System.out.println("The doSomething method was executed by thread:"
                     + Thread.currentThread().getName());
+            int i = 0;
+            while (true){
+                ++i;
+                System.out.println(i);
+                if(Thread.currentThread().isInterrupted()){
+                    System.out.println("isInterrupted");
+                    break;
+                }
+                Thread.yield();
+            }
             System.out.println("Do something with " + message);
         }
 
         @Override
         public void run() {
+            System.out.println("开始运行helper 类中的run！");
             doSomething(message);
-
         }
 
         
