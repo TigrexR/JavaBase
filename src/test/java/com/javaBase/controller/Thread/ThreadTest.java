@@ -1,4 +1,4 @@
-package com.javaBase.controller;
+package com.javaBase.controller.Thread;
 
 import org.junit.Test;
 import org.junit.runner.notification.RunListener;
@@ -35,11 +35,12 @@ public class ThreadTest {
             while (true){
                 ++i;
                 System.out.println(i);
+                Thread.yield();
                 if(Thread.currentThread().isInterrupted()){
                     System.out.println("isInterrupted");
                     break;
                 }
-                Thread.yield();
+                Thread.currentThread().stop();
             }
             System.out.println("Do something with " + message);
         }
