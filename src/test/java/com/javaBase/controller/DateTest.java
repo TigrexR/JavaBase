@@ -2,6 +2,7 @@ package com.javaBase.controller;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateTest {
@@ -11,5 +12,8 @@ public class DateTest {
         Date nowDate = new Date();
         System.out.println(nowDate.after(nowDate));
         System.out.println(nowDate + "//" + new Date());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(sdf.format(nowDate));
     }
 }
